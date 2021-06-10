@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Baymax的博客</title>
+  <title>Baymax Blog</title>
   
-  <subtitle>Baymax的编码生活</subtitle>
+  <subtitle>Life of Baymax</subtitle>
   <link href="http://baikexiang.cn/atom.xml" rel="self"/>
   
   <link href="http://baikexiang.cn/"/>
