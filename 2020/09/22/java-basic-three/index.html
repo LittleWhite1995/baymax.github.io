@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java基础知识（变量与常量）&lt;4&gt;, Java | 数据结构 | 计算机网络原理 | 操作系统">
+    <meta name="keywords" content="Java基础知识（基本数据类型）&lt;3&gt;, Java | 数据结构 | 计算机网络原理 | 操作系统">
     <meta name="description" content="好好学习 天天向上">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java基础知识（变量与常量）&lt;4&gt; | Baymax Blog</title>
+    <title>Java基础知识（基本数据类型）&lt;3&gt; | Baymax Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java基础知识（变量与常量）&lt;4&gt;</h1>
+                    <h1 class="description center-align post-title">Java基础知识（基本数据类型）&lt;3&gt;</h1>
                 </div>
             </div>
         </div>
@@ -462,7 +462,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-21
+                    2020-09-22
                 </div>
                 
 
@@ -471,14 +471,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    775
+                    829
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -493,37 +493,51 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在程序执行过程中，其值不能被改变的量称为常量，其值能被改变的量称为变量。</p>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><p>PS：以下代码中（//、/*这两个符号代表注释）</p>
+                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在Java中有8中基本数据类型来存储数值、字符和布尔值。<br>基本数据类型：数值型、字符型、布尔型。<br>数值型：整数类型（byte、short、int、long）、浮点类型（float、double）。<br>字符型（char）。布尔型（boolean）。</p>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>PS：以下代码中（//、/*这两个符号代表注释）</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">test</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>                                                   <span class="token comment" spellcheck="true">//创建类</span>
-         <span class="token comment" spellcheck="true">/**
-          * 标识符：所谓标识符其实就是名字（类名、变量名、方法名、数组名、文件名等有效字符序列）。
-          * 关键字：关键字是Java语言中已经被赋予特定意义的单词（int、boolean、public、static），不可以把这些单词作为标识符使用。
-          * 关于标识符与关键字大概介绍就是这些，关于Java都有什么关键字与标识符怎样才算有效字符序列，请自行百度，这里不做过多介绍。
-          * 但是这里我会简单介绍以下用到的个别关键字与标识符，以便理解。
-          * static关键字：静态，在程序初始化的时候被创建，有效范围整个应用程序，所谓的全局，缺点是不会被销毁，一直占用一块内存。
-          * final关键字：final关键字用法较多，如果对一个变量加上final关键字，那么该变量在整个程序中只能被赋值一次，所以就称之为常量。
-          * final关键字还可以修饰类，修饰方法等这里我给大家一个文章链接如果写深入理解final可以看一下。
-          * final关键字文章链接（个人推荐暂时不要看，因为过于深入）：http://www.cnblogs.com/dolphin0520/p/3736238.html
-          * myint1标识符：myint1就是该常量的标识符，这个名字是自己取的，只要为有效字符序列就可以了。
-          * 变量：在程序执行过程中，其值能被改变的量称为变量。
-          * 定义变量需要告诉编译器这个变量的数据类型（如：int），这样编译器才知道需要配置多少空间给它，以及它能存放什么样的数据。
-          * 在程序运行过程中。空间内的值是变化的，在该内存空间存储的值就称为变量值，给这个空间取个名字成为变量名。
-          * 在声明变量时可以是没有赋值的，也可以是直接赋给初值。
-          * 常量：在程序执行过程中，其值不能被改变的量称为常量。
-          * 常量就是加上了final关键字的变量，整个程序中只能被赋值一次。
-          */</span>
-         <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> myint1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//声明全局常量myint1，这里需要对其赋值，否则会报错。</span>
-         <span class="token keyword">static</span> <span class="token keyword">int</span> myint2 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>           <span class="token comment" spellcheck="true">//声明全局变量myint2，并对其赋值，变量不赋值并不会出错。</span>
          <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">//主方法</span>
-                   <span class="token comment" spellcheck="true">//myint1 = 2;           //这里是错误代码所以我注释起来了，因为myint1为常量，只能进行一次赋值。</span>
-                   myint2 <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">//这里对全部变量myint2进行赋值，此时myint2为2。</span>
-                   <span class="token keyword">final</span> <span class="token keyword">int</span> myint3<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//声明局部常量myint3。</span>
-                   myint3 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>              <span class="token comment" spellcheck="true">//这里对局部常量进行赋值。</span>
-                   <span class="token keyword">int</span> myint4 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">//声明局部变量myint4，并对其赋值。</span>
+                  <span class="token comment" spellcheck="true">/**
+                   * 整数数据根据它所占内存大小的不同，分为byte、short、int、long，4种类型，它们具有不同的取值范围。
+                   * byte数据类型：（内存空间（8位等于1字节）：8位、取值范围：-128~127）
+                   * short数据类型：（内存空间（8位等于1字节）：16位、取值范围：-32768~32767）
+                   * int数据类型：（内存空间（8位等于1字节）：32位、取值范围：-2147483648~2147483647）
+                   * long数据类型：（内存空间（8位等于1字节）：64位、取值范围：-9223372036854775808~9223372036854775807）
+                   * 在定义以上4种类型变量时，要注意变量的取值范围，超出相应范围就会出错。
+                   * 对long型值，若赋给的值大于int型的最大值或小于int型的最小值，则需要在数字后面加L，表示该数值为长整数。
+                   * 如：long num = 2147483650L;
+                   */</span>
+                  <span class="token keyword">byte</span> mybyte <span class="token operator">=</span> <span class="token number">125</span><span class="token punctuation">;</span>                             <span class="token comment" spellcheck="true">//声明byte型变量并赋值</span>
+                  <span class="token keyword">short</span> myshort <span class="token operator">=</span> <span class="token number">32666</span><span class="token punctuation">;</span>                       <span class="token comment" spellcheck="true">//声明short型变量并赋值</span>
+                  <span class="token keyword">int</span> myint <span class="token operator">=</span> <span class="token number">2147483644</span><span class="token punctuation">;</span>                     <span class="token comment" spellcheck="true">//声明int型变量并赋值</span>
+                  <span class="token keyword">long</span> mylong <span class="token operator">=</span> 2147483650L<span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">//声明long型变量并赋值</span>
+                  <span class="token comment" spellcheck="true">/**
+                   * 浮点类型表示有小数部分的数字，Java语言中浮点类型分为单精度浮点类型（float）和双精度浮点类型（double）
+                   * float数据类型：（内存空间（8位等于1字节）：32位、取值范围：1.4E~3.4028235E38）
+                   * double数据类型：（内存空间（8位等于1字节）：64位、取值范围：4.9E~1.7976931348623157E308）
+                   * 在默认情况下小数都被看作double型，若使用float型小数，则需要在小数后面添加F或f。
+                   * 加上后缀d或D表明这是一个double型数据，不加"d"并不会出错。如：double mydouble = 1234.12；
+                   * 但声明float型变量时如果不加"f"，系统会认为变量是double类型而出错。
+                   */</span>
+                  <span class="token keyword">float</span> myfloat <span class="token operator">=</span> <span class="token number">13.23f</span><span class="token punctuation">;</span>                         <span class="token comment" spellcheck="true">//声明float型变量并赋值</span>
+                  <span class="token keyword">double</span> mydouble <span class="token operator">=</span> <span class="token number">1234.12d</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//声明double型变量并赋值</span>
+                  <span class="token comment" spellcheck="true">/**
+                   * 字符类型用于储存单个字符。
+                   * char数据类型：（内存空间（8位等于1字节）：16位）
+                   * 在定义字符型变量时，要以单引号表示，如'a'表示一个字符。
+                   * 而以双引号表示的"a"代表一个字符串，虽然只有一个字符，但是由于使用双引号，它仍然表示字符串，而不是字符。
+                   * PS：转义字符是一种特殊的字符变量，它以反斜线"\"开头，后面多跟一个字符。关于转义字符请自行百度=w=。
+                   */</span>
+                  <span class="token keyword">char</span> mychar <span class="token operator">=</span> <span class="token string">'a'</span><span class="token punctuation">;</span>                                <span class="token comment" spellcheck="true">//声明char型变量并赋值</span>
+                  <span class="token keyword">char</span> mychar <span class="token operator">=</span> <span class="token number">97</span><span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">//由于字符a在unicode表中的排序位置是97，因此允许把语句写成这样</span>
+                  <span class="token comment" spellcheck="true">/**
+                   * 布尔类型又称逻辑类型，通过关键字boolean来定义布尔类型变量，boolean型只有true和false两个值，分别代表布
+                   * 尔逻辑中的"真"和"假"，布尔类型通常被用在流程控制中作为判断条件。
+                   */</span>
+                  <span class="token keyword">boolean</span> myboolean <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>                 <span class="token comment" spellcheck="true">//声明boolean型变量并赋值</span>
          <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -550,7 +564,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://baikexiang.cn/2020/09/21/java-basic-four/">http://baikexiang.cn/2020/09/21/java-basic-four/</a>
+                    <a href="http://baikexiang.cn/2020/09/22/java-basic-three/">http://baikexiang.cn/2020/09/22/java-basic-three/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -638,7 +652,7 @@
         repo: 'baymax.github.io',
         owner: 'LittleWhite1995',
         admin: "LittleWhite1995",
-        id: '2020-09-21T14-36-49',
+        id: '2020-09-22T15-36-30',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -670,13 +684,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/28/java-basic-five/">
+                <a href="/2020/09/24/java-basic-four/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Java基础知识（数据类型转换）&lt;5&gt;">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Java基础知识（变量与常量）&lt;4&gt;">
                         
-                        <span class="card-title">Java基础知识（数据类型转换）&lt;5&gt;</span>
+                        <span class="card-title">Java基础知识（变量与常量）&lt;4&gt;</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -687,7 +701,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-28
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-24
                         </span>
                         <span class="publish-author">
                             
@@ -723,13 +737,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/21/java-basic-three/">
+                <a href="/2020/09/21/java-basic-two/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Java基础知识（基本数据类型）&lt;3&gt;">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Java基础知识（主类结构）&lt;2&gt;">
                         
-                        <span class="card-title">Java基础知识（基本数据类型）&lt;3&gt;</span>
+                        <span class="card-title">Java基础知识（主类结构）&lt;2&gt;</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -763,6 +777,10 @@
                     
                     <a href="/tags/%E5%9F%BA%E7%A1%80/">
                         <span class="chip bg-color">基础</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">语法</span>
                     </a>
                     
                 </div>
