@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分布式事务&lt;1&gt;, Java | 数据结构 | 计算机网络原理 | 操作系统">
+    <meta name="keywords" content="分布式事务, Java | 数据结构 | 计算机网络原理 | 操作系统">
     <meta name="description" content="好好学习 天天向上">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分布式事务&lt;1&gt; | Baymax Blog</title>
+    <title>分布式事务 | Baymax Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">分布式事务&lt;1&gt;</h1>
+                    <h1 class="description center-align post-title">分布式事务</h1>
                 </div>
             </div>
         </div>
@@ -445,6 +445,14 @@
                                 <span class="chip bg-color">ACID</span>
                             </a>
                         
+                            <a href="/tags/CAP/">
+                                <span class="chip bg-color">CAP</span>
+                            </a>
+                        
+                            <a href="/tags/BASE/">
+                                <span class="chip bg-color">BASE</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -475,14 +483,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    20
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    11 分
                 </div>
                 
 
@@ -497,7 +505,104 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2>
+                <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="什么是事务？"><a href="#什么是事务？" class="headerlink" title="什么是事务？"></a>什么是事务？</h3><p>事务提供一种机制将一个活动涉及的所有操作纳入到一个不可分割的执行单元，组成事务的所有操作只有在所有操作均能正常执行的情况下方能提交，只要其中任一操作执行失败，都将导致整个事务的回滚。简单地说：事务提供一种“要么什么都不做，要么做全套（All or Nothing）”机制。<br>举个生活中的例子：你去小卖铺买东西“一手交钱，一手交货”就是一个事务的例子，交钱和交货必须全部成功，事务才算成功，任一个活动失败，事务将撤销所有已成功的活动。</p>
+<h3 id="本地事务"><a href="#本地事务" class="headerlink" title="本地事务"></a>本地事务</h3><p>在计算机系统中，更多的是通过关系型数据库来控制事务，这是利用数据库本身的事务特性来实现的，因此叫数据库事务，由于应用主要靠关系数据库来控制事务，而数据库通常和应用在同一个服务器，所以基于关系型数据库的事务又被称为本地事务。</p>
+<p>数据库事务的四大特性 ACID： </p>
+<ul>
+<li>A（Atomic）：原子性，构成事务的所有操作，要么都执行完成，要么全部不执行，不可能出现部分成功部分失败的情况。</li>
+<li>C（Consistency）：一致性，在事务执行前后，数据库的一致性约束没有被破坏。比如：张三向李四转100元，转账前和转账后的数据是正确状态这叫一致性，如果出现张三转出100元，李四账户没有增加100元这就出现了数据错误，就没有达到一致性。</li>
+<li>I（Isolation）：隔离性，数据库中的事务一般都是并发的，隔离性是指并发的两个事务的执行互不干扰，一个事务不能看到其他事务运行过程的中间状态。通过配置事务隔离级别可以避脏读、重复读等问题。</li>
+<li>D（Durability）：持久性，事务完成之后，该事务对数据的更改会被持久化到数据库，且不会被回滚。数据库事务在实现时会将一次事务涉及的所有操作全部纳入到一个不可分割的执行单元，该执行单元中的所有操作要么都成功，要么都失败，只要其中任一操作执行失败，都将导致整个事务的回滚。</li>
+</ul>
+<h3 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h3><p>随着互联网的快速发展，软件系统由原来的单体应用转变为分布式应用，下图描述了单体应用向微服务的演变：</p>
+<p><img src="%E5%BA%94%E7%94%A8%E6%BC%94%E5%8F%98.jpg" alt="应用演变"></p>
+<p>分布式系统会把一个应用系统拆分为可独立部署的多个服务，因此需要服务与服务之间远程协作才能完成事务操作，这种分布式系统环境下由不同的服务之间通过网络远程协作完成事务称之为分布式事务，例如用户注册送积分事务、创建订单减库存事务，银行转账事务等都是分布式事务。</p>
+<h2 id="分布式事务产生的场景"><a href="#分布式事务产生的场景" class="headerlink" title="分布式事务产生的场景"></a>分布式事务产生的场景</h2><ol>
+<li>典型的场景就是微服务架构微服务之间通过远程调用完成事务操作。比如：订单微服务和库存微服务，下单的同时订单微服务请求库存微服务减库存。 简言之：跨JVM进程产生分布式事务。</li>
+</ol>
+<p><img src="%E8%B7%A8%E6%9C%8D%E5%8A%A1%E5%9C%BA%E6%99%AF.jpg" alt="跨服务场景"></p>
+<ol start="2">
+<li>单体系统访问多个数据库实例当单体系统需要访问多个数据库（实例）时就会产生分布式事务。比如：用户信息和订单信息分别在两个MySQL实例存储，用户管理系统删除用户信息，需要分别删除用户信息及用户的订单信息，由于数据分布在不同的数据实例，需要通过不同的数据库链接去操作数据，此时产生分布式事务。简言之：跨数据库实例产生分布式事务。</li>
+</ol>
+<p><img src="%E8%B7%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9C%BA%E6%99%AF.jpg" alt="跨数据库场景"></p>
+<ol start="3">
+<li>多服务访问同一个数据库实例比如：订单微服务和库存微服务即使访问同一个数据库也会产生分布式事务，原因就是跨JVM进程，两个微服务持有了不同的数据库链接进行数据库操作，此时产生分布式事务。</li>
+</ol>
+<p><img src="%E8%B7%A8JVM%E8%BF%9B%E7%A8%8B%E5%9C%BA%E6%99%AF.jpg" alt="跨JVM进程场景"></p>
+<h2 id="分布式事务基础理论"><a href="#分布式事务基础理论" class="headerlink" title="分布式事务基础理论"></a>分布式事务基础理论</h2><h3 id="CAP原则"><a href="#CAP原则" class="headerlink" title="CAP原则"></a>CAP原则</h3><p>CAP原则又被称作布鲁尔定理（Brewer’s theorem），它指出对于一个分布式系统来说，在Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性）这三点中只能同时满足两点：</p>
+<p><img src="CAP.jpg" alt="CAP"></p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Consistency（一致性）</td>
+<td>指数据在多个副本之间能够保持一致的特性（严格的一致性）</td>
+</tr>
+<tr>
+<td>Availability（可用性）</td>
+<td>指系统提供的服务必须一直处于可用的状态，每次请求都能获取到非错的响应（不保证获取的数据为最新数据）</td>
+</tr>
+<tr>
+<td>Partition tolerance（分区容错性）</td>
+<td>分布式系统在遇到任何网络分区故障的时候，仍然能够对外提供满足一致性和可用性的服务，除非整个网络环境都发生了故障</td>
+</tr>
+</tbody></table>
+<p>CAP是一个已经被证实的理论：一个分布式系统最多只能同时满足一致性（Consistency）、可用性（Availability）和分区容忍性（Partition tolerance）这三项中的两项。它可以作为我们进行架构设计、技术选型的考量标准。对于多数大型互联网应用的场景，结点众多、部署分散，而且现在的集群规模越来越大，所以节点故障、网络故障是常态，而且要保证服务可用性达到N个9（99.99..%），并要达到良好的响应性能来提高用户体验，因此一般都会做出如下选择：保证P和A，舍弃C强一致，保证最终一致性。</p>
+<h3 id="BASE原则"><a href="#BASE原则" class="headerlink" title="BASE原则"></a>BASE原则</h3><p>BASE 是 Basically Available（基本可用）、Soft state（软状态）和 Eventually consistent（最终一致性）三个词语的缩写，BASE理论是对CAP中AP的一个扩展，通过牺牲强一致性来获得可用性，当出现故障允许部分不可用但要保证核心功能可用，允许数据在一段时间内是不一致的，但最终达到一致状态。</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Basically Available（基本可用）</td>
+<td>分布式系统在出现故障时，允许损失部分可用功能，保证核心功能可用。</td>
+</tr>
+<tr>
+<td>Soft state（软状态）</td>
+<td>允许系统中的数据存在中间状态，并认为该状态不影响系统的整体可用性，即允许系统在多个不同节点的数据副本存在数据延时。</td>
+</tr>
+<tr>
+<td>Eventually consistent（最终一致性）</td>
+<td>最终一致是指经过一段时间后，所有节点数据都将会达到一致。</td>
+</tr>
+</tbody></table>
+<p>BASE理论面向的是大型高可用、可扩展的分布式系统。与传统ACID特性相反，不同于ACID的强一致性模型，BASE提出通过牺牲强一致性来获得可用性，并允许数据段时间内的不一致，但是最终达到一致状态。同时，在实际分布式场景中，不同业务对数据的一致性要求不一样。因此在设计中，ACID和BASE理论往往又会结合使用。</p>
+<h2 id="分布式事务的解决方案"><a href="#分布式事务的解决方案" class="headerlink" title="分布式事务的解决方案"></a>分布式事务的解决方案</h2><h3 id="DTP模型"><a href="#DTP模型" class="headerlink" title="DTP模型"></a>DTP模型</h3><p>由于全局事务是基于DTP模型实现的在解释全局事务之前，我们需要先了解一下DTP模型，它规定了要实现分布式事务需要三种角色：</p>
+<ol>
+<li>AP(Application Program)：即应用程序，可以理解为使用DTP分布式事务的程序。</li>
+<li>RM(Resource Manager)：即资源管理器，可以理解为事务的参与者，一般情况下是指一个数据库实例，通过资源管理器对该数据库进行控制，资源管理器控制着分支事务。</li>
+<li>TM(Transaction Manager)：事务管理器，负责协调和管理事务，事务管理器控制着全局事务，管理事务生命周期，并协调各个RM。全局事务是指分布式事务处理环境中，需要操作多个数据库共同完成一个工作，这个工作即是一个全局事务。</li>
+</ol>
+<p>DTP模型定义TM和RM之间通讯的接口规范叫XA，简单理解为数据库提供的2PC接口协议，基于数据库的XA协议来实现2PC又称为XA方案。</p>
+<p>以上三个角色之间的交互方式如下：</p>
+<ol>
+<li>TM向AP提供 应用程序编程接口，AP通过TM提交及回滚事务。</li>
+<li>TM交易中间件通过XA接口来通知RM数据库事务的开始、结束以及提交、回滚等。</li>
+</ol>
+<h3 id="2PC"><a href="#2PC" class="headerlink" title="2PC"></a>2PC</h3><p>2PC即两阶段提交协议又称全局事务，两阶段提交是一种强一致性设计，2PC 引入一个事务协调者的角色来协调管理各参与者（也可称之为各本地资源）的提交和回滚，二阶段分别指的是准备（投票）和提交两个阶段。<br>注意这只是协议或者说是理论指导，只阐述了大方向，具体落地还是有会有差异的。<br>让我们来看下两个阶段的具体流程。<br>准备阶段协调者会给各参与者发送准备命令，你可以把准备命令理解成除了提交事务之外啥事都做完了。<br>同步等待所有资源的响应之后就进入第二阶段即提交阶段（注意提交阶段不一定是提交事务，也可能是回滚事务）。<br>假如在第一阶段所有参与者都返回准备成功，那么协调者则向所有参与者发送提交事务命令，然后等待所有事务都提交成功之后，返回事务执行成功。<br>让我们来看一下流程图：</p>
+<p><img src="%E5%87%86%E5%A4%87%E9%98%B6%E6%AE%B5.jpg" alt="准备阶段"></p>
+<p>假如在第一阶段有一个参与者返回失败，那么协调者就会向所有参与者发送回滚事务的请求，即分布式事务执行失败。</p>
+<p><img src="%E5%87%86%E5%A4%87%E5%A4%B1%E8%B4%A5.jpg" alt="准备失败"></p>
+<p>如果第二阶段提交失败的话，会有两种情况：</p>
+<ol>
+<li>第二阶段执行的是回滚事务操作，那么答案是不断重试，直到所有参与者都回滚了，不然那些在第一阶段准备成功的参与者会一直阻塞着。</li>
+<li>第二阶段执行的是提交事务操作，那么答案也是不断重试，因为有可能一些参与者的事务已经提交成功了，这个时候只有一条路，就是头铁往前冲，不断的重试，直到提交成功，到最后真的不行只能人工介入处理。</li>
+</ol>
+<p>大体上二阶段提交的流程就是这样，我们再来看看细节：<br>首先 2PC 是一个同步阻塞协议，像第一阶段协调者会等待所有参与者响应才会进行下一步操作，当然第一阶段的协调者有超时机制，假设因为网络原因没有收到某参与者的响应或某参与者挂了，那么超时后就会判断事务失败，向所有参与者发送回滚命令。<br>在第二阶段协调者的没法超时，因为按照我们上面分析只能不断重试！<br>2PC 是一种尽量保证强一致性的分布式事务，因此它是同步阻塞的，而同步阻塞就导致长久的资源锁定问题，总体而言效率低，并且存在单点故障问题，在极端条件下存在数据不一致的风险。<br>当然具体的实现可以变形，而且 2PC 也有变种，例如 Tree 2PC、Dynamic 2PC。<br>2PC 适用于数据库层面的分布式事务场景，而我们业务需求有时候不仅仅关乎数据库，也有可能是上传一张图片或者发送一条短信。<br>而且像 Java 中的 JTA 只能解决一个应用下多数据库的分布式事务问题，跨服务了就不能用了。<br>简单说下 Java 中 JTA，它是基于XA规范实现的事务接口，这里的 XA 你可以简单理解为基于数据库的 XA 规范来实现的 2PC。  </p>
+<h3 id="3PC"><a href="#3PC" class="headerlink" title="3PC"></a>3PC</h3><p>正在整理…..</p>
+<h3 id="TCC"><a href="#TCC" class="headerlink" title="TCC"></a>TCC</h3><p>正在整理…..</p>
+<h3 id="可靠消息最终一致性"><a href="#可靠消息最终一致性" class="headerlink" title="可靠消息最终一致性"></a>可靠消息最终一致性</h3><p>正在整理…..</p>
+<h3 id="最大努力通知"><a href="#最大努力通知" class="headerlink" title="最大努力通知"></a>最大努力通知</h3><p>正在整理…..</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>正在整理…..</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>敖丙-分布式事务</strong><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35190492/article/details/108000380">https://blog.csdn.net/qq_35190492/article/details/108000380</a><br><strong>漫画算法-什么是分布式事务？</strong><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/bjweimengshu/article/details/79607522">https://blog.csdn.net/bjweimengshu/article/details/79607522</a><br><strong>咖啡拿铁-再有人问你分布式事务，把这篇扔给他</strong><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903647197806605">https://juejin.cn/post/6844903647197806605</a><br><strong>零壹技术栈-BASE理论</strong><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903621495095304">https://juejin.cn/post/6844903621495095304</a></p>
+
                 
             </div>
             <hr/>
@@ -571,6 +676,14 @@
                             
                                 <a href="/tags/ACID/">
                                     <span class="chip bg-color">ACID</span>
+                                </a>
+                            
+                                <a href="/tags/CAP/">
+                                    <span class="chip bg-color">CAP</span>
+                                </a>
+                            
+                                <a href="/tags/BASE/">
+                                    <span class="chip bg-color">BASE</span>
                                 </a>
                             
                         </div>
@@ -652,9 +765,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="分布式事务&lt;1&gt;">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="分布式事务">
                         
-                        <span class="card-title">分布式事务&lt;1&gt;</span>
+                        <span class="card-title">分布式事务</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -693,6 +806,14 @@
                     
                     <a href="/tags/ACID/">
                         <span class="chip bg-color">ACID</span>
+                    </a>
+                    
+                    <a href="/tags/CAP/">
+                        <span class="chip bg-color">CAP</span>
+                    </a>
+                    
+                    <a href="/tags/BASE/">
+                        <span class="chip bg-color">BASE</span>
                     </a>
                     
                 </div>
@@ -940,7 +1061,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">28.8k</span>
+                        class="white-color">32k</span>
             
             
             

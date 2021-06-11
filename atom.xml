@@ -6,7 +6,7 @@
   <link href="http://baikexiang.cn/atom.xml" rel="self"/>
   
   <link href="http://baikexiang.cn/"/>
-  <updated>2021-06-04T02:41:42.676Z</updated>
+  <updated>2021-06-11T09:40:40.045Z</updated>
   <id>http://baikexiang.cn/</id>
   
   <author>
@@ -17,18 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>分布式事务&lt;1&gt;</title>
+    <title>分布式事务</title>
     <link href="http://baikexiang.cn/2021/05/31/distributed-transaction-one/"/>
     <id>http://baikexiang.cn/2021/05/31/distributed-transaction-one/</id>
     <published>2021-05-31T08:22:15.000Z</published>
-    <updated>2021-06-04T02:41:42.676Z</updated>
+    <updated>2021-06-11T09:40:40.045Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;h2 id=&quot;要点&quot;&gt;&lt;a href=&quot;#要点&quot; class=&quot;headerlink&quot; title=&quot;要点&quot;&gt;&lt;/a&gt;要点&lt;/h2&gt;&lt;h3</summary>
+    <summary type="html">&lt;h2 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h2&gt;&lt;h3 id=&quot;什么是事务？&quot;&gt;&lt;a href=&quot;#什么是事务？&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -42,6 +42,10 @@
     <category term="分布式" scheme="http://baikexiang.cn/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
     <category term="ACID" scheme="http://baikexiang.cn/tags/ACID/"/>
+    
+    <category term="CAP" scheme="http://baikexiang.cn/tags/CAP/"/>
+    
+    <category term="BASE" scheme="http://baikexiang.cn/tags/BASE/"/>
     
   </entry>
   
@@ -114,7 +118,7 @@
     <link href="http://baikexiang.cn/2021/02/24/jvm-memory-area-one/"/>
     <id>http://baikexiang.cn/2021/02/24/jvm-memory-area-one/</id>
     <published>2021-02-24T03:55:40.000Z</published>
-    <updated>2021-03-31T08:20:10.920Z</updated>
+    <updated>2021-06-11T03:23:06.521Z</updated>
     
     
       
