@@ -30,8 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Baymax Blog" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 
@@ -471,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    829
+                    825
                 </div>
                 
 
@@ -488,6 +487,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -495,49 +497,50 @@
             <div id="articleContent">
                 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在Java中有8中基本数据类型来存储数值、字符和布尔值。<br>基本数据类型：数值型、字符型、布尔型。<br>数值型：整数类型（byte、short、int、long）、浮点类型（float、double）。<br>字符型（char）。布尔型（boolean）。</p>
 <h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>PS：以下代码中（//、/*这两个符号代表注释）</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">test</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>                                                   <span class="token comment" spellcheck="true">//创建类</span>
-         <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">//主方法</span>
-                  <span class="token comment" spellcheck="true">/**
-                   * 整数数据根据它所占内存大小的不同，分为byte、short、int、long，4种类型，它们具有不同的取值范围。
-                   * byte数据类型：（内存空间（8位等于1字节）：8位、取值范围：-128~127）
-                   * short数据类型：（内存空间（8位等于1字节）：16位、取值范围：-32768~32767）
-                   * int数据类型：（内存空间（8位等于1字节）：32位、取值范围：-2147483648~2147483647）
-                   * long数据类型：（内存空间（8位等于1字节）：64位、取值范围：-9223372036854775808~9223372036854775807）
-                   * 在定义以上4种类型变量时，要注意变量的取值范围，超出相应范围就会出错。
-                   * 对long型值，若赋给的值大于int型的最大值或小于int型的最小值，则需要在数字后面加L，表示该数值为长整数。
-                   * 如：long num = 2147483650L;
-                   */</span>
-                  <span class="token keyword">byte</span> mybyte <span class="token operator">=</span> <span class="token number">125</span><span class="token punctuation">;</span>                             <span class="token comment" spellcheck="true">//声明byte型变量并赋值</span>
-                  <span class="token keyword">short</span> myshort <span class="token operator">=</span> <span class="token number">32666</span><span class="token punctuation">;</span>                       <span class="token comment" spellcheck="true">//声明short型变量并赋值</span>
-                  <span class="token keyword">int</span> myint <span class="token operator">=</span> <span class="token number">2147483644</span><span class="token punctuation">;</span>                     <span class="token comment" spellcheck="true">//声明int型变量并赋值</span>
-                  <span class="token keyword">long</span> mylong <span class="token operator">=</span> 2147483650L<span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">//声明long型变量并赋值</span>
-                  <span class="token comment" spellcheck="true">/**
-                   * 浮点类型表示有小数部分的数字，Java语言中浮点类型分为单精度浮点类型（float）和双精度浮点类型（double）
-                   * float数据类型：（内存空间（8位等于1字节）：32位、取值范围：1.4E~3.4028235E38）
-                   * double数据类型：（内存空间（8位等于1字节）：64位、取值范围：4.9E~1.7976931348623157E308）
-                   * 在默认情况下小数都被看作double型，若使用float型小数，则需要在小数后面添加F或f。
-                   * 加上后缀d或D表明这是一个double型数据，不加"d"并不会出错。如：double mydouble = 1234.12；
-                   * 但声明float型变量时如果不加"f"，系统会认为变量是double类型而出错。
-                   */</span>
-                  <span class="token keyword">float</span> myfloat <span class="token operator">=</span> <span class="token number">13.23f</span><span class="token punctuation">;</span>                         <span class="token comment" spellcheck="true">//声明float型变量并赋值</span>
-                  <span class="token keyword">double</span> mydouble <span class="token operator">=</span> <span class="token number">1234.12d</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//声明double型变量并赋值</span>
-                  <span class="token comment" spellcheck="true">/**
-                   * 字符类型用于储存单个字符。
-                   * char数据类型：（内存空间（8位等于1字节）：16位）
-                   * 在定义字符型变量时，要以单引号表示，如'a'表示一个字符。
-                   * 而以双引号表示的"a"代表一个字符串，虽然只有一个字符，但是由于使用双引号，它仍然表示字符串，而不是字符。
-                   * PS：转义字符是一种特殊的字符变量，它以反斜线"\"开头，后面多跟一个字符。关于转义字符请自行百度=w=。
-                   */</span>
-                  <span class="token keyword">char</span> mychar <span class="token operator">=</span> <span class="token string">'a'</span><span class="token punctuation">;</span>                                <span class="token comment" spellcheck="true">//声明char型变量并赋值</span>
-                  <span class="token keyword">char</span> mychar <span class="token operator">=</span> <span class="token number">97</span><span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">//由于字符a在unicode表中的排序位置是97，因此允许把语句写成这样</span>
-                  <span class="token comment" spellcheck="true">/**
-                   * 布尔类型又称逻辑类型，通过关键字boolean来定义布尔类型变量，boolean型只有true和false两个值，分别代表布
-                   * 尔逻辑中的"真"和"假"，布尔类型通常被用在流程控制中作为判断条件。
-                   */</span>
-                  <span class="token keyword">boolean</span> myboolean <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>                 <span class="token comment" spellcheck="true">//声明boolean型变量并赋值</span>
-         <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> test<span class="token punctuation">&#123;</span>                                                   <span class="token comment">//创建类</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>         <span class="token comment">//主方法</span>
+       <span class="token comment">/**
+        * 整数数据根据它所占内存大小的不同，分为byte、short、int、long，4种类型，它们具有不同的取值范围。
+        * byte数据类型：（内存空间（8位等于1字节）：8位、取值范围：-128~127）
+        * short数据类型：（内存空间（8位等于1字节）：16位、取值范围：-32768~32767）
+        * int数据类型：（内存空间（8位等于1字节）：32位、取值范围：-2147483648~2147483647）
+        * long数据类型：（内存空间（8位等于1字节）：64位、取值范围：-9223372036854775808~9223372036854775807）
+        * 在定义以上4种类型变量时，要注意变量的取值范围，超出相应范围就会出错。
+        * 对long型值，若赋给的值大于int型的最大值或小于int型的最小值，则需要在数字后面加L，表示该数值为长整数。
+        * 如：long num = 2147483650L;
+        */</span>
+       <span class="token keyword">byte</span> mybyte <span class="token operator">=</span> <span class="token number">125</span><span class="token punctuation">;</span>                             <span class="token comment">//声明byte型变量并赋值</span>
+       <span class="token keyword">short</span> myshort <span class="token operator">=</span> <span class="token number">32666</span><span class="token punctuation">;</span>                       <span class="token comment">//声明short型变量并赋值</span>
+       <span class="token keyword">int</span> myint <span class="token operator">=</span> <span class="token number">2147483644</span><span class="token punctuation">;</span>                     <span class="token comment">//声明int型变量并赋值</span>
+       <span class="token keyword">long</span> mylong <span class="token operator">=</span> <span class="token number">2147483650L</span><span class="token punctuation">;</span>             <span class="token comment">//声明long型变量并赋值</span>
+       <span class="token comment">/**
+        * 浮点类型表示有小数部分的数字，Java语言中浮点类型分为单精度浮点类型（float）和双精度浮点类型（double）
+        * float数据类型：（内存空间（8位等于1字节）：32位、取值范围：1.4E~3.4028235E38）
+        * double数据类型：（内存空间（8位等于1字节）：64位、取值范围：4.9E~1.7976931348623157E308）
+        * 在默认情况下小数都被看作double型，若使用float型小数，则需要在小数后面添加F或f。
+        * 加上后缀d或D表明这是一个double型数据，不加"d"并不会出错。如：double mydouble = 1234.12；
+        * 但声明float型变量时如果不加"f"，系统会认为变量是double类型而出错。
+        */</span>
+       <span class="token keyword">float</span> myfloat <span class="token operator">=</span> <span class="token number">13.23f</span><span class="token punctuation">;</span>                         <span class="token comment">//声明float型变量并赋值</span>
+       <span class="token keyword">double</span> mydouble <span class="token operator">=</span> <span class="token number">1234.12d</span><span class="token punctuation">;</span>            <span class="token comment">//声明double型变量并赋值</span>
+       <span class="token comment">/**
+        * 字符类型用于储存单个字符。
+        * char数据类型：（内存空间（8位等于1字节）：16位）
+        * 在定义字符型变量时，要以单引号表示，如'a'表示一个字符。
+        * 而以双引号表示的"a"代表一个字符串，虽然只有一个字符，但是由于使用双引号，它仍然表示字符串，而不是字符。
+        * PS：转义字符是一种特殊的字符变量，它以反斜线"\"开头，后面多跟一个字符。关于转义字符请自行百度=w=。
+        */</span>
+       <span class="token keyword">char</span> mychar <span class="token operator">=</span> <span class="token string">'a'</span><span class="token punctuation">;</span>                                <span class="token comment">//声明char型变量并赋值</span>
+       <span class="token keyword">char</span> mychar <span class="token operator">=</span> <span class="token number">97</span><span class="token punctuation">;</span>      <span class="token comment">//由于字符a在unicode表中的排序位置是97，因此允许把语句写成这样</span>
+       <span class="token comment">/**
+        * 布尔类型又称逻辑类型，通过关键字boolean来定义布尔类型变量，boolean型只有true和false两个值，分别代表布
+        * 尔逻辑中的"真"和"假"，布尔类型通常被用在流程控制中作为判断条件。
+        */</span>
+       <span class="token keyword">boolean</span> myboolean <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>                 <span class="token comment">//声明boolean型变量并赋值</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 
                 
             </div>
@@ -949,6 +952,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 
 
     <footer class="page-footer bg-color">
@@ -967,7 +977,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">32k</span>
+                        class="white-color">32.3k</span>
             
             
             

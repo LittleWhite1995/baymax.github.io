@@ -30,8 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Baymax Blog" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 
@@ -496,6 +495,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -528,20 +530,20 @@
 </ol>
 <h3 id="类的职责是否设计得越单一越好？"><a href="#类的职责是否设计得越单一越好？" class="headerlink" title="类的职责是否设计得越单一越好？"></a>类的职责是否设计得越单一越好？</h3><p>单一职责原则通过避免设计大而全的类，避免将不相关的功能耦合在一起，来提高类的内聚性。<br>同时，类职责单一，类依赖的和被依赖的其他类也会变少，减少了代码的耦合性，以此来实现代码的高内聚、低耦合。<br>但是，如果拆分得过细，实际上会适得其反，反倒会降低内聚性，也会影响代码的可维护性。</p>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="如何判断类的职责是否足够单一？-1"><a href="#如何判断类的职责是否足够单一？-1" class="headerlink" title="如何判断类的职责是否足够单一？"></a>如何判断类的职责是否足够单一？</h3><p>在一个社交产品中，我们用下面的 UserInfo 类来记录用户的信息。你觉得，UserInfo 类的设计是否满足单一职责原则呢？</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserInfo</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserInfo</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">private</span> <span class="token keyword">long</span> userId<span class="token punctuation">;</span>
-  <span class="token keyword">private</span> String username<span class="token punctuation">;</span>
-  <span class="token keyword">private</span> String email<span class="token punctuation">;</span>
-  <span class="token keyword">private</span> String telephone<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> username<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> email<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> telephone<span class="token punctuation">;</span>
   <span class="token keyword">private</span> <span class="token keyword">long</span> createTime<span class="token punctuation">;</span>
   <span class="token keyword">private</span> <span class="token keyword">long</span> lastLoginTime<span class="token punctuation">;</span>
-  <span class="token keyword">private</span> String avatarUrl<span class="token punctuation">;</span>
-  <span class="token keyword">private</span> String provinceOfAddress<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 省</span>
-  <span class="token keyword">private</span> String cityOfAddress<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 市</span>
-  <span class="token keyword">private</span> String regionOfAddress<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 区 </span>
-  <span class="token keyword">private</span> String detailedAddress<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 详细地址</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> avatarUrl<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> provinceOfAddress<span class="token punctuation">;</span> <span class="token comment">// 省</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> cityOfAddress<span class="token punctuation">;</span> <span class="token comment">// 市</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> regionOfAddress<span class="token punctuation">;</span> <span class="token comment">// 区 </span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> detailedAddress<span class="token punctuation">;</span> <span class="token comment">// 详细地址</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="观点"><a href="#观点" class="headerlink" title="观点"></a>观点</h4><p>对于这个问题，有两种不同的观点：<br>一种观点是，UserInfo 类包含的都是跟用户相关的信息，所有的属性和方法都隶属于用户这样一个业务模型，满足单一职责原则。<br>另一种观点是，地址信息在 UserInfo 类中，所占的比重比较高，可以继续拆分成独立的 UserAddress 类，UserInfo 只保留除 Address 之外的其他信息，拆分之后的两个类的职责更加单一。</p>
 <h4 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h4><p>要从中做出选择，我们不能脱离具体的应用场景。<br>如果在这个社交产品中，用户的地址信息跟其他信息一样，只是单纯地用来展示，那 UserInfo 现在的设计就是合理的。<br>但是，如果这个社交产品发展得比较好，之后又在产品中添加了电商的模块，用户的地址信息还会用在电商物流中，那我们最好将地址信息从 UserInfo 中拆分出来，独立成用户物流信息（或者叫地址信息、收货信息等）。</p>
 <h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>综上所述，评价一个类的职责是否足够单一，我们并没有一个非常明确的、可以量化的标准，可以说，这是件非常主观、仁者见仁智者见智的事情。<br>实际上，在真正的软件开发中，我们也没必要过于未雨绸缪，过度设计。<br>所以，我们可以先写一个粗粒度的类，满足业务需求。随着业务的发展，如果粗粒度的类越来越庞大，代码越来越多，这个时候，我们就可以将这个粗粒度的类，拆分成几个更细粒度的类。<br>这就是所谓的持续重构。</p>
@@ -974,6 +976,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 
 
     <footer class="page-footer bg-color">
@@ -992,7 +1001,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">32k</span>
+                        class="white-color">32.3k</span>
             
             
             

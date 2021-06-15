@@ -30,8 +30,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Baymax Blog" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
 
@@ -475,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    279
+                    273
                 </div>
                 
 
@@ -492,6 +491,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -499,26 +501,26 @@
             <div id="articleContent">
                 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Java语言是面向对象的程序设计语言，Java程序的基本组成单元是类，类体中又包括属性与方法两个部分。每一个程序都必须包含一个main()方法，含有main()方法的类称为主类。</p>
 <h3 id="Java主类结构"><a href="#Java主类结构" class="headerlink" title="Java主类结构"></a>Java主类结构</h3><p>PS：以下代码中（//、/*这两个符号代表注释）</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//这一行的语句代表声明该类所在的包，package为包的关键字</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com</span><span class="token punctuation">;</span>     <span class="token comment">//这一行的语句代表声明该类所在的包，package为包的关键字</span>
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">test</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> test<span class="token punctuation">&#123;</span>
 
-         <span class="token keyword">static</span> String s1 <span class="token operator">=</span> <span class="token string">"你好"</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//这一行的语句代表创建了一个（全局变量）</span>
+    <span class="token keyword">static</span> <span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token string">"你好"</span><span class="token punctuation">;</span>   <span class="token comment">//这一行的语句代表创建了一个（全局变量）</span>
 
-         <span class="token comment" spellcheck="true">/** 
-          * 下面这个main()是这个程序的主方法，该方法从"&amp;#123;"号开始，至"&amp;#125;"号结束。
-          * public、static、void分别是main()方法的权限修饰符、静态修饰符、返回值修饰符。
-          * String[] args是一个字符串类型的数组，它是main()方法的参数。
-          * main()方法是该程序开始执行的位置。
-          */</span>
-         <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                   String s2 <span class="token operator">=</span> <span class="token string">"Java"</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//这一行的语句代表创建了一个（局部变量）</span>
-                   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-         <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token comment">/** 
+     * 下面这个main()是这个程序的主方法，该方法从"&#123;"号开始，至"&#125;"号结束。
+     * public、static、void分别是main()方法的权限修饰符、静态修饰符、返回值修饰符。
+     * String[] args是一个字符串类型的数组，它是main()方法的参数。
+     * main()方法是该程序开始执行的位置。
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">String</span> s2 <span class="token operator">=</span> <span class="token string">"Java"</span><span class="token punctuation">;</span>    <span class="token comment">//这一行的语句代表创建了一个（局部变量）</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="程序运行结果"><a href="#程序运行结果" class="headerlink" title="程序运行结果"></a>程序运行结果</h3><p>你好<br>Java</p>
 
                 
@@ -931,6 +933,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 
 
     <footer class="page-footer bg-color">
@@ -949,7 +958,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">32k</span>
+                        class="white-color">32.3k</span>
             
             
             
